@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simulação de Geradores</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <style>
+    /* Estilos CSS para o PDF */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simulação de Geradores</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome do Gerador</th>
+        <th>Preço</th>
+        <th>Número de Painéis</th>
+        <th>Potência</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @generators.each do |generator| %>
+        <tr>
+          <td><%= generator['name'] %></td>
+          <td>R$ <%= generator['price'] %></td>
+          <td><%= generator['panels'] %></td>
+          <td><%= generator['power'] %> kWp</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
+</html>
